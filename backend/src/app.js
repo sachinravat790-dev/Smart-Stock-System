@@ -50,7 +50,7 @@ app.use(
     cookie: {
       httpOnly: true,
       secure: config.production,
-      sameSite: "lax",
+    sameSite: config.production ? "none" : "lax",
       maxAge: 8 * 60 * 60 * 1000,
       path: "/",
     },
